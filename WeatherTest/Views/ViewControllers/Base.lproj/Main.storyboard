@@ -22,8 +22,8 @@
                                     <segue destination="6yw-8Y-JWz" kind="embed" id="10f-hR-QAP"/>
                                 </connections>
                             </containerView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="sEL-FU-f1l">
-                                <rect key="frame" x="187.5" y="815" width="39" height="37"/>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="sEL-FU-f1l">
+                                <rect key="frame" x="179.5" y="815" width="55" height="37"/>
                             </pageControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -221,6 +221,11 @@
                             <constraint firstItem="Uia-id-fKp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xvh-29-ibW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="wvs-Fy-2F3"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="cityNameLabel" destination="CIW-td-XRX" id="2Fj-Ny-Lxn"/>

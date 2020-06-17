@@ -9,35 +9,16 @@
 import UIKit
 import CoreLocation
 
-class WeatherContentViewController: UIViewController, WeatherPageVCDelegate, CLLocationManagerDelegate {
+class WeatherContentViewController: UIViewController, WeatherPageVCDelegate {
     var weatherPageVC: WeatherPageViewController?
     var locationManager: CLLocationManager!
     
     @IBOutlet weak var pageControl: UIPageControl!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        locationManager = CLLocationManager()
-        self.locationManager.requestAlwaysAuthorization()
-        self.locationManager.requestWhenInUseAuthorization()
-
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-            locationManager.startUpdatingLocation()
-        }
-    }
-    
     func updateUI() {
         if let index = weatherPageVC?.currentIndex {
             pageControl.currentPage = index
         }
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
-        print("locations = \(locValue.latitude) \(locValue.longitude)")
     }
     
     func didUpdatePageIndex(currentIndex: Int) {
